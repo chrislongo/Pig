@@ -1,0 +1,12 @@
+Work in progress.  Supports syntax highlighting and command completion for most Pig functions and keywords.
+Build will run the script under 'pig -x local'.
+
+Issues
+------
+
+- PigLatin.sublime-build needs to be modified per system (I need to figure out global env vars in ST2).
+- Error line highlighting not working.
+- Currently some minor keywords and functions.
+
+Syntax highlighting based on Tommy Chheng's TextMate Bundle: http://tommy.chheng.com/2009/09/14/pig-textmate-bundle/
+
