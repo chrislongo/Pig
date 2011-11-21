@@ -13,9 +13,9 @@ Build will run the script under "pig -x local".
 
 1. Copy the 'Pig' folder to your user packages folder.  
 
-	OS: "~/Libary/Application Support/Sublime Text 2/Packages/User"
-	Windows: "%APPDATA%\Sublime Text 2\Packages\User"
-	Linux: "~/.config/sublime-text-2/Packages/User"
+	* OS: "~/Libary/Application Support/Sublime Text 2/Packages/User"
+	* Windows: "%APPDATA%\Sublime Text 2\Packages\User"
+	* Linux: "~/.config/sublime-text-2/Packages/User"
 
 2. Edit "PigLatin.sublime-build" to match your system config. 
 
