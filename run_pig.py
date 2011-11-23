@@ -10,13 +10,14 @@ class RunPigCommand(sublime_plugin.WindowCommand):
 
         java_home = settings.get('java_home')
         pig_home = settings.get('pig_home')
+
         pig_binary = None
 
         if java_home is not None and len(java_home) > 0:
-            env['java_home'] = java_home
+            env['JAVA_HOME'] = java_home
 
         if pig_home is not None and len(pig_home) > 0:
-            env['pig_home'] = pig_home
+            env['PIG_HOME'] = pig_home
             pig_binary = pig_home + '/bin/pig'
         else:
             pig_binary = 'pig'
