@@ -24,7 +24,6 @@ class RunPigCommand(sublime_plugin.WindowCommand):
         file_name = self.window.active_view().file_name()
 
         cmd = [pig_binary, "-x local", file_name]
-        env = {'JAVA_HOME': java_home, 'PIG_HOME': pig_home}
 
         self.window.run_command('exec',
             {'cmd': cmd, 'env': env, 'file_regex': file_regex, 'path': path})
