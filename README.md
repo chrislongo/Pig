@@ -13,9 +13,9 @@ Build (Super+B) will run the script under "pig -x local".
 
 1. Change to Sublime Text packages folder:  
 
-	* OS: "~/Libary/Application Support/Sublime Text 2/Packages/User"
-	* Windows: "%APPDATA%\Sublime Text 2\Packages\User"
-	* Linux: "~/.config/sublime-text-2/Packages/User"
+	* **OS:** "~/Libary/Application Support/Sublime Text 2/Packages/User"
+	* **Windows:** "%APPDATA%\Sublime Text 2\Packages\User"
+	* **Linux:** "~/.config/sublime-text-2/Packages/User"
 
 2. Run the command:
 
