@@ -1,0 +1,5 @@
+{
+	"target" : "run_pig",
+	"file_regex" : "file (...*?), line ([0-9]*), column ([0-9]*)\\s+(...*?)$",
+	"selector" : "source.pig"
+}
