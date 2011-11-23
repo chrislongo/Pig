@@ -19,7 +19,7 @@ Build (Super+B) will run the script under "pig -x local".
 
 2. Run the command:
 
-	git clone git://github.com/chrislongo/Pig.git
+	`git clone git://github.com/chrislongo/Pig.git`
 
 3. Preferences->Package Settings->Pig->Settings Default contains settings that can be tweaked per system.
 
