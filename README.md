@@ -36,6 +36,6 @@ Set "java_home" in your Pig.sublime-settings file.
 
 Set "pig_home" in your Pig.sublime-settings file.
 
-# Notes
+# Attribution
 
 Syntax highlighting based on Tommy Chheng's TextMate Bundle: http://tommy.chheng.com/2009/09/14/pig-textmate-bundle/

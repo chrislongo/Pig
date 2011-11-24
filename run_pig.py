@@ -24,8 +24,6 @@ class RunPigCommand(sublime_plugin.WindowCommand):
         pig_classpath = self.get_setting('pig_classpath')
         log4j_properties = self.get_setting('log4j_properties')
 
-        print java_home
-
         pig_binary = None
 
         if java_home is not None:
