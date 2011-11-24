@@ -1,5 +1,7 @@
 # Info
 
+![A picture of the sytax highlighting and build output](http://i.imgur.com/yGTGV.png)
+
 Work in progress.  Supports syntax highlighting and command completion for most Pig functions and keywords.
 
 Build (Super+B) will run the script under "pig -x local".
