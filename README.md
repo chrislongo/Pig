@@ -23,7 +23,7 @@ Build (Super+B) will run the script under "pig -x local".
 
 	`git clone git://github.com/chrislongo/Pig.git`
 
-3. Preferences->Package Settings->Pig->Settings Default contains settings that can be tweaked per system.
+3. `Preferences->Package Settings->Pig->Settings Default` contains settings that can be tweaked per system.
 
 	* "**java_home:**" Your JAVA_HOME enviroment variable (needed if not set at the system level).
     * "**pig_home:**" Where Pig is installed on your system if the Pig binary in not in the system path.	
