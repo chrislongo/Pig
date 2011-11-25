@@ -1,6 +1,6 @@
 # Info
 
-![A picture of the sytax highlighting and build output](http://i.imgur.com/yGTGV.png)
+![A picture of the syntax highlighting and build output](http://i.imgur.com/lpiu7.png)
 
 Work in progress.  Supports syntax highlighting and command completion for most Pig functions and keywords.
 
@@ -15,9 +15,9 @@ Build (Super+B) will run the script under "pig -x local".
 
 1. Change to Sublime Text packages folder:  
 
-	* **OS:** "~/Libary/Application Support/Sublime Text 2/Packages/User"
-	* **Windows:** "%APPDATA%\Sublime Text 2\Packages\User"
-	* **Linux:** "~/.config/sublime-text-2/Packages/User"
+	* **OS:** `~/Libary/Application Support/Sublime Text 2/Packages/User`
+	* **Windows:** `%APPDATA%\Sublime Text 2\Packages\User`
+	* **Linux:** `~/.config/sublime-text-2/Packages/User`
 
 2. Run the command:
 
@@ -26,7 +26,10 @@ Build (Super+B) will run the script under "pig -x local".
 3. Preferences->Package Settings->Pig->Settings Default contains settings that can be tweaked per system.
 
 	* "**java_home:**" Your JAVA_HOME enviroment variable (needed if not set at the system level).
-	* "**pig_home:**" Where Pig is installed on your system if the Pig binary in not in the system path.
+    * "**pig_home:**" Where Pig is installed on your system if the Pig binary in not in the system path.	
+    * "**execution_mode:**" Whether to run in local or mapreduce mode (see Pig docs).
+    * "**pig_classpath:**" May be needed per system when run in mapreduce mode.
+    * "**log4j_properties:**" You can specify a custom log4j.properties for prettier output.
 
 # Help
 
