@@ -20,6 +20,12 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>(--).*$\n?</string>
+			<key>name</key>
+			<string>comment.line.double-slash.asciidoc</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>\b(load|store|dump|filter|distinct|foreach|generate|stream|join|cogroup|group|cross|order|limit|union|split|describe|explain|illustrate|register|define|as|by|into|using|limit|parallel|outer|LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|REGISTER|DEFINE|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER)\b</string>
 			<key>name</key>
 			<string>keyword.pig</string>
