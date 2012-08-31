@@ -13,17 +13,23 @@ Build (Super+B) will run the script under "pig -x local".
 
 # Install
 
-1. Change to Sublime Text packages folder:  
+### Easy
+
+[Install via Package Control](http://wbond.net/sublime_packages/package_control)
+
+### Hard 
+
+* Change to Sublime Text packages folder:  
 
 	* **OS:** `~/Library/Application Support/Sublime Text 2/Packages/User`
 	* **Windows:** `%APPDATA%\Sublime Text 2\Packages\User`
 	* **Linux:** `~/.config/sublime-text-2/Packages/User`
 
-2. Run the command:
+* Run the command:
 
 	`git clone git://github.com/chrislongo/Pig.git`
 
-3. `Preferences->Package Settings->Pig->Settings Default` contains settings that can be tweaked per system.
+* `Preferences->Package Settings->Pig->Settings Default` contains settings that can be tweaked per system.
 
 	* "**java_home:**" Your JAVA_HOME enviroment variable (needed if not set at the system level).
     * "**pig_home:**" Where Pig is installed on your system if the Pig binary in not in the system path.	
