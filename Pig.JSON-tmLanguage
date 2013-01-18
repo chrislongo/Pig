@@ -1,0 +1,103 @@
+{
+    "fileTypes": [
+        "pig"
+    ], 
+    "name": "Pig", 
+    "patterns": [
+        {
+            "begin": "/\\*", 
+            "end": "\\*/", 
+            "name": "comment.block.pig"
+        }, 
+        {
+            "match": "(--).*$\\n?", 
+            "name": "comment.line.double-dash.asciidoc"
+        }, 
+        {
+            "match": "\\b(?i:load|store|dump|filter|distinct|foreach|generate|stream|join|cogroup|group|cross|order|limit|union|split|describe|explain|illustrate|register|as|by|into|using|limit|parallel|outer|inner|default|left|sample)\\b", 
+            "name": "keyword.control.pig"
+        }, 
+        {
+            "match": "\\b(?i:int|long|float|double|chararray|bytearray)\\b", 
+            "name": "storage.datatypes.pig"
+        }, 
+        {
+            "match": "\\b(PigStorage|BinStorage|BinaryStorage|PigDump|HBaseStorage)\\b", 
+            "name": "entity.function.storage.pig"
+        }, 
+        {
+            "match": "\\b(ABS|ACOS|ASIN|ATAN|CBRT|CEIL|COS|COSH|EXP|FLOOR|LOG|LOG10|ROUND|SIN|SINH|SQRT|TAN|TANH|AVG|COUNT|COUNT_STAR|MAX|MIN|SUM|CONCAT|INDEXOF|LAST_INDEX_OF|LCFIRST|LOWER|REGEX_EXTRACT|REGEX_EXTRACT_ALL|REPLACE|SIZE|STRSPLIT|SUBSTRING|TOKENIZE|TRIM|UCFIRST|UPPER|COR|DIFF|TOBAG|TOMAP|TOP|TOTUPLE|RANDOM)\\b", 
+            "name": "entity.function.udf.pig"
+        }, 
+        {
+            "match": "(?i)\\$[a_z0-9]+", 
+            "name": "variable.pig"
+        }, 
+        {
+            "match": "(?i)null",
+            "name" : "constant.language.pig"
+        },
+        {
+            "match": "(?i)\\s*\\b(?:!=|==|<|>|<=|>=|matches|is|or|and|not)\\b\\s*", 
+            "name": "keyword.operator.comparison.pig"
+        }, 
+        {
+            "match": "\\b(\\+|\\-|\\*|\\/|\\%)\\b", 
+            "name": "keyword.operator.arithmetic.pig"
+        }, 
+        {
+            "begin": "\"", 
+            "end": "\"", 
+            "name": "string.quoted.double.pig", 
+            "patterns": [
+                {
+                    "match": "\\\\.", 
+                    "name": "constant.character.escape.pig"
+                }
+            ]
+        }, 
+        {
+            "begin": "'", 
+            "end": "'", 
+            "name": "string.quoted.single.pig", 
+            "patterns": [
+                {
+                    "match": "\\\\.", 
+                    "name": "constant.character.escape.pig"
+                }
+            ]
+        }, 
+        {
+            "captures": {
+                "1": {
+                    "name": "storage.type.variable.pig"
+                }
+            }, 
+            "match": "(?i)^\\s*([a-z_][a-z0-9_]*)\\s*(?:=)"
+        }, 
+        {
+            "captures": {
+                "1": {
+                    "name": "keyword.parameter.pig"
+                }, 
+                "2": {
+                    "name": "storage.type.parameter.pig"
+                }
+            }, 
+            "match": "(?i)\\s*(set)\\s+(\\S+)\\s+(\\S+)"
+        }, 
+        {
+            "captures": {
+                "1": {
+                    "name": "keyword.alias.pig"
+                }, 
+                "2": {
+                    "name": "storage.type.alias.pig"
+                }
+            }, 
+            "match": "(?i)\\s*(define)\\s+(\\S+)"
+        }
+    ], 
+    "scopeName": "source.pig", 
+    "uuid": "6B102D86-1EB7-4729-94E5-8EE7D3D6F82B"
+}
