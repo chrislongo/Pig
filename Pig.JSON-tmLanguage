@@ -34,7 +34,7 @@
             "name": "variable.pig"
         }, 
         {
-            "match": "(?i)null",
+            "match": "\\b(?i)null\\b",
             "name" : "constant.language.pig"
         },
         {
