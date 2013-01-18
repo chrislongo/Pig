@@ -26,31 +26,37 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(load|store|dump|filter|distinct|foreach|generate|stream|join|cogroup|group|cross|order|limit|union|split|describe|explain|illustrate|register|define|as|by|into|using|limit|parallel|outer|LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|REGISTER|DEFINE|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER)\b</string>
+			<string>\b(?i:load|store|dump|filter|distinct|foreach|generate|stream|join|cogroup|group|cross|order|limit|union|split|describe|explain|illustrate|register|as|by|into|using|limit|parallel|outer|inner|default|left|sample)\b</string>
 			<key>name</key>
-			<string>keyword.pig</string>
+			<string>keyword.control.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(int|long|float|double|chararray|bytearray)\b</string>
+			<string>\b(?i:int|long|float|double|chararray|bytearray)\b</string>
 			<key>name</key>
 			<string>storage.datatypes.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(FLATTEN|AVG|CONCAT|COUNT|DIFF|MAX|MIN|SIZE|SUM|TOKENIZE|IsEmpty|PigStorage|BinStorage|BinaryStorage|TextLoader|PigDump)\b</string>
+			<string>\b(PigStorage|BinStorage|BinaryStorage|PigDump|HBaseStorage)\b</string>
 			<key>name</key>
-			<string>entity.function.pig</string>
+			<string>entity.function.storage.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\$[0-9]+</string>
+			<string>\b(ABS|ACOS|ASIN|ATAN|CBRT|CEIL|COS|COSH|EXP|FLOOR|LOG|LOG10|ROUND|SIN|SINH|SQRT|TAN|TANH|AVG|COUNT|COUNT_STAR|MAX|MIN|SUM|CONCAT|INDEXOF|LAST_INDEX_OF|LCFIRST|LOWER|REGEX_EXTRACT|REGEX_EXTRACT_ALL|REPLACE|SIZE|STRSPLIT|SUBSTRING|TOKENIZE|TRIM|UCFIRST|UPPER|COR|DIFF|TOBAG|TOMAP|TOP|TOTUPLE|RANDOM)\b</string>
+			<key>name</key>
+			<string>entity.function.udf.pig</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i)\$[a_z0-9]+</string>
 			<key>name</key>
 			<string>variable.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(!=|==|&lt;|&gt;|&lt;=|&gt;=| matches| is null| is not null|or| and| not)\b</string>
+			<string>(?i)\s*\b(?:!=|==|&lt;|&gt;|&lt;=|&gt;=|matches|is null|is not null|or|and|not)\b\s*</string>
 			<key>name</key>
 			<string>keyword.operator.comparison.pig</string>
 		</dict>
@@ -93,6 +99,52 @@
 					<string>constant.character.escape.pig</string>
 				</dict>
 			</array>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i)^\s*([a-z_][a-z0-9_]*)\s*(?:=)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.variable.pig</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i)\s*(set)\s+(\S+)\s+(\S+)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.parameter.pig</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.parameter.pig</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i)\s*(define)\s+(\S+)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.alias.pig</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.alias.pig</string>
+				</dict>
+			</dict>
 		</dict>
 	</array>
 	<key>scopeName</key>
