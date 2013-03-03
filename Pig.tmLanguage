@@ -26,7 +26,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:load|store|dump|filter|distinct|foreach|generate|stream|join|cogroup|group|cross|order|limit|union|split|describe|explain|illustrate|register|as|by|into|using|limit|parallel|outer|inner|default|left|sample)\b</string>
+			<string>\b(?i:LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|REGISTER|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER|INNER|DEFAULT|LEFT|SAMPLE)\b</string>
 			<key>name</key>
 			<string>keyword.control.pig</string>
 		</dict>
@@ -40,13 +40,13 @@
 			<key>match</key>
 			<string>\b(PigStorage|BinStorage|BinaryStorage|PigDump|HBaseStorage)\b</string>
 			<key>name</key>
-			<string>entity.function.storage.pig</string>
+			<string>support.function.storage.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\b(ABS|ACOS|ASIN|ATAN|CBRT|CEIL|COS|COSH|EXP|FLOOR|LOG|LOG10|ROUND|SIN|SINH|SQRT|TAN|TANH|AVG|COUNT|COUNT_STAR|MAX|MIN|SUM|CONCAT|INDEXOF|LAST_INDEX_OF|LCFIRST|LOWER|REGEX_EXTRACT|REGEX_EXTRACT_ALL|REPLACE|SIZE|STRSPLIT|SUBSTRING|TOKENIZE|TRIM|UCFIRST|UPPER|COR|DIFF|TOBAG|TOMAP|TOP|TOTUPLE|RANDOM)\b</string>
 			<key>name</key>
-			<string>entity.function.udf.pig</string>
+			<string>support.function.udf.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -56,13 +56,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)null</string>
+			<string>\b(?i)null\b</string>
 			<key>name</key>
 			<string>constant.language.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)\s*\b(?:!=|==|&lt;|&gt;|&lt;=|&gt;=|matches|is|or|and|not)\b\s*</string>
+			<string>(?i)\s*\b(?:!=|==|&lt;|&gt;|&lt;=|&gt;=|MATCHES|IS|OR|AND|NOT)\b\s*</string>
 			<key>name</key>
 			<string>keyword.operator.comparison.pig</string>
 		</dict>
@@ -150,7 +150,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?i)\s*(define)\s+(\S+)</string>
+			<string>(?i)\s*(DEFINE)\s+(\S+)</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
