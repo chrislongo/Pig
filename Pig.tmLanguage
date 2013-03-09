@@ -26,7 +26,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|REGISTER|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER|INNER|DEFAULT|LEFT|SAMPLE|RANK|CUBE|ALL|KILL|QUIT|MAPREDUCE|ASC|DESC|THROUGH|SHIP|CACHE|STDERR)\b</string>
+			<string>\b(?i:LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|REGISTER|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER|INNER|DEFAULT|LEFT|SAMPLE|RANK|CUBE|ALL|KILL|QUIT|MAPREDUCE|ASC|DESC|THROUGH|SHIP|CACHE|STDERR|DECLARE)\b</string>
 			<key>name</key>
 			<string>keyword.control.pig</string>
 		</dict>
@@ -74,7 +74,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\$[a_zA-Z0-9]+</string>
+			<string>\$[a_zA-Z0-9_]+</string>
 			<key>name</key>
 			<string>variable.pig</string>
 		</dict>
@@ -174,7 +174,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?i)\s*(DEFINE)\s+(\S+)</string>
+			<string>(?i)\s*(DEFINE|DECLARE)\s+(\S+)</string>
 		</dict>
 	</array>
 	<key>scopeName</key>

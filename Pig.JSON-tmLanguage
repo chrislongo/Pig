@@ -14,7 +14,7 @@
             "name": "comment.line.double-dash.asciidoc"
         },
         {
-            "match": "\\b(?i:LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|REGISTER|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER|INNER|DEFAULT|LEFT|SAMPLE|RANK|CUBE|ALL|KILL|QUIT|MAPREDUCE|ASC|DESC|THROUGH|SHIP|CACHE|STDERR)\\b",
+            "match": "\\b(?i:LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|REGISTER|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER|INNER|DEFAULT|LEFT|SAMPLE|RANK|CUBE|ALL|KILL|QUIT|MAPREDUCE|ASC|DESC|THROUGH|SHIP|CACHE|STDERR|DECLARE)\\b",
             "name": "keyword.control.pig"
         },
         {
@@ -46,7 +46,7 @@
             "name": "support.function.command.pig"
         },
         {
-            "match": "\\$[a_zA-Z0-9]+",
+            "match": "\\$[a_zA-Z0-9_]+",
             "name": "variable.pig"
         },
         {
@@ -111,7 +111,7 @@
                     "name": "storage.type.alias.pig"
                 }
             },
-            "match": "(?i)\\s*(DEFINE)\\s+(\\S+)"
+            "match": "(?i)\\s*(DEFINE|DECLARE)\\s+(\\S+)"
         }
     ],
     "scopeName": "source.pig",
