@@ -14,35 +14,51 @@
             "name": "comment.line.double-dash.asciidoc"
         },
         {
-            "match": "\\b(?i:LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|REGISTER|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER|INNER|DEFAULT|LEFT|SAMPLE)\\b",
+            "match": "\\b(?i:LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|REGISTER|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER|INNER|DEFAULT|LEFT|SAMPLE|RANK|CUBE|ALL|KILL|QUIT|MAPREDUCE|ASC|DESC|THROUGH|SHIP|CACHE|STDERR)\\b",
             "name": "keyword.control.pig"
         },
         {
-            "match": "\\b(?i:int|long|float|double|chararray|bytearray)\\b",
+            "match": "\\b(?i:int|long|float|double|chararray|bytearray|boolean|datetime|tuple|bag|map)\\b",
             "name": "storage.datatypes.pig"
         },
         {
-            "match": "\\b(PigStorage|BinStorage|BinaryStorage|PigDump|HBaseStorage)\\b",
+            "match": "\\b(PigStorage|BinStorage|BinaryStorage|PigDump|HBaseStorage|JsonLoader|JsonStorage|AvroStorage|TextLoader)\\b",
             "name": "support.function.storage.pig"
         },
         {
-            "match": "\\b(ABS|ACOS|ASIN|ATAN|CBRT|CEIL|COS|COSH|EXP|FLOOR|LOG|LOG10|ROUND|SIN|SINH|SQRT|TAN|TANH|AVG|COUNT|COUNT_STAR|MAX|MIN|SUM|CONCAT|INDEXOF|LAST_INDEX_OF|LCFIRST|LOWER|REGEX_EXTRACT|REGEX_EXTRACT_ALL|REPLACE|SIZE|STRSPLIT|SUBSTRING|TOKENIZE|TRIM|UCFIRST|UPPER|COR|DIFF|TOBAG|TOMAP|TOP|TOTUPLE|RANDOM)\\b",
+            "match": "\\b(DIFF|TOBAG|TOMAP|TOP|TOTUPLE|RANDOM|FLATTEN|CUBE|ROLLUP|IsEmpty|ARITY)\\b",
             "name": "support.function.udf.pig"
         },
         {
-            "match": "(?i)\\$[a_z0-9]+",
+            "match": "\\b(ABS|ACOS|ASIN|ATAN|CBRT|CEIL|COS|COSH|EXP|FLOOR|LOG|LOG10|ROUND|SIN|SINH|SQRT|TAN|TANH|AVG|COUNT|COUNT_STAR|MAX|MIN|SUM|COR|COV)\\b",
+            "name": "support.function.udf.math.pig"
+        },
+        {
+            "match": "\\b(CONCAT|INDEXOF|LAST_INDEX_OF|LCFIRST|LOWER|REGEX_EXTRACT|REGEX_EXTRACT_ALL|REPLACE|SIZE|STRSPLIT|SUBSTRING|TOKENIZE|TRIM|UCFIRST|UPPER)\\b",
+            "name": "support.function.udf.string.pig"
+        },
+        {
+            "match": "\\b(AddDuration|CurrentTime|DaysBetween|GetDay|GetHour|GetMilliSecond|GetMinute|GetMonth|GetSecond|GetWeek|GetWeekYear|GetYear|HoursBetween|MilliSecondsBetween|MinutesBetween|MonthsBetween|SecondsBetween|SubtractDuration|ToDate|WeeksBetween|YearsBetween)\\b",
+            "name" : "support.function.udf.datetime.pig"
+        },
+        {
+            "match": "\\b(cat|cd|copyFromLocal|copyToLocal|cp|ls|mkdir|mv|pwd|rm)\\b",
+            "name": "support.function.command.pig"
+        },
+        {
+            "match": "\\$[a_zA-Z0-9]+",
             "name": "variable.pig"
         },
         {
-            "match": "\\b(?i)NULL\\b",
+            "match": "(?i)\\b(NULL|true|false)\\b",
             "name" : "constant.language.pig"
         },
         {
-            "match": "(?i)\\s*\\b(?:!=|==|<|>|<=|>=|MATCHES|IS|OR|AND|NOT)\\b\\s*",
+            "match": "(?i)\\b(?:!=|==|<|>|<=|>=|MATCHES|IS|OR|AND|NOT)\\b",
             "name": "keyword.operator.comparison.pig"
         },
         {
-            "match": "\\b(\\+|\\-|\\*|\\/|\\%)\\b",
+            "match": "\\b(\\+|\\-|\\*|\\/|\\%|\\?|:|::)\\b",
             "name": "keyword.operator.arithmetic.pig"
         },
         {

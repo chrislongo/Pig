@@ -26,49 +26,73 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|REGISTER|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER|INNER|DEFAULT|LEFT|SAMPLE)\b</string>
+			<string>\b(?i:LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|REGISTER|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER|INNER|DEFAULT|LEFT|SAMPLE|RANK|CUBE|ALL|KILL|QUIT|MAPREDUCE|ASC|DESC|THROUGH|SHIP|CACHE|STDERR)\b</string>
 			<key>name</key>
 			<string>keyword.control.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:int|long|float|double|chararray|bytearray)\b</string>
+			<string>\b(?i:int|long|float|double|chararray|bytearray|boolean|datetime|tuple|bag|map)\b</string>
 			<key>name</key>
 			<string>storage.datatypes.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(PigStorage|BinStorage|BinaryStorage|PigDump|HBaseStorage)\b</string>
+			<string>\b(PigStorage|BinStorage|BinaryStorage|PigDump|HBaseStorage|JsonLoader|JsonStorage|AvroStorage|TextLoader)\b</string>
 			<key>name</key>
 			<string>support.function.storage.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(ABS|ACOS|ASIN|ATAN|CBRT|CEIL|COS|COSH|EXP|FLOOR|LOG|LOG10|ROUND|SIN|SINH|SQRT|TAN|TANH|AVG|COUNT|COUNT_STAR|MAX|MIN|SUM|CONCAT|INDEXOF|LAST_INDEX_OF|LCFIRST|LOWER|REGEX_EXTRACT|REGEX_EXTRACT_ALL|REPLACE|SIZE|STRSPLIT|SUBSTRING|TOKENIZE|TRIM|UCFIRST|UPPER|COR|DIFF|TOBAG|TOMAP|TOP|TOTUPLE|RANDOM)\b</string>
+			<string>\b(DIFF|TOBAG|TOMAP|TOP|TOTUPLE|RANDOM|FLATTEN|CUBE|ROLLUP|IsEmpty|ARITY)\b</string>
 			<key>name</key>
 			<string>support.function.udf.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)\$[a_z0-9]+</string>
+			<string>\b(ABS|ACOS|ASIN|ATAN|CBRT|CEIL|COS|COSH|EXP|FLOOR|LOG|LOG10|ROUND|SIN|SINH|SQRT|TAN|TANH|AVG|COUNT|COUNT_STAR|MAX|MIN|SUM|COR|COV)\b</string>
+			<key>name</key>
+			<string>support.function.udf.math.pig</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(CONCAT|INDEXOF|LAST_INDEX_OF|LCFIRST|LOWER|REGEX_EXTRACT|REGEX_EXTRACT_ALL|REPLACE|SIZE|STRSPLIT|SUBSTRING|TOKENIZE|TRIM|UCFIRST|UPPER)\b</string>
+			<key>name</key>
+			<string>support.function.udf.string.pig</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(AddDuration|CurrentTime|DaysBetween|GetDay|GetHour|GetMilliSecond|GetMinute|GetMonth|GetSecond|GetWeek|GetWeekYear|GetYear|HoursBetween|MilliSecondsBetween|MinutesBetween|MonthsBetween|SecondsBetween|SubtractDuration|ToDate|WeeksBetween|YearsBetween)\b</string>
+			<key>name</key>
+			<string>support.function.udf.datetime.pig</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(cat|cd|copyFromLocal|copyToLocal|cp|ls|mkdir|mv|pwd|rm)\b</string>
+			<key>name</key>
+			<string>support.function.command.pig</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\$[a_zA-Z0-9]+</string>
 			<key>name</key>
 			<string>variable.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i)null\b</string>
+			<string>(?i)\b(NULL|true|false)\b</string>
 			<key>name</key>
 			<string>constant.language.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)\s*\b(?:!=|==|&lt;|&gt;|&lt;=|&gt;=|MATCHES|IS|OR|AND|NOT)\b\s*</string>
+			<string>(?i)\b(?:!=|==|&lt;|&gt;|&lt;=|&gt;=|MATCHES|IS|OR|AND|NOT)\b</string>
 			<key>name</key>
 			<string>keyword.operator.comparison.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(\+|\-|\*|\/|\%)\b</string>
+			<string>\b(\+|\-|\*|\/|\%|\?|:|::)\b</string>
 			<key>name</key>
 			<string>keyword.operator.arithmetic.pig</string>
 		</dict>
