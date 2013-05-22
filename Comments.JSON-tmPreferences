@@ -1,0 +1,9 @@
+{
+
+    "name": "Comment",
+    "scope": "source.pig",
+    "settings" : {
+    	"shellVariables" : [{"name" : "TM_COMMENT_START", "value": "-- "}]
+    },
+    "uuid": "9d8ac5c4-07d0-40d7-baec-2ebc43d1d054"
+}
