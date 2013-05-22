@@ -5,6 +5,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>pig</string>
+		<string>pig.substituted</string>
 	</array>
 	<key>name</key>
 	<string>Pig</string>
