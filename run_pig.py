@@ -5,6 +5,7 @@ import os
 
 class RunPigCommand(sublime_plugin.WindowCommand):
     settings = None
+    error_regex = '^.*\<file (...*), line (\d+), column (\d+)\>.*$'
 
     def get_setting(self, name):
         setting = self.settings.get(name)
@@ -50,4 +51,4 @@ class RunPigCommand(sublime_plugin.WindowCommand):
         cmd.append(self.window.active_view().file_name())
 
         self.window.run_command('exec',
-            {'cmd': cmd, 'env': env, 'file_regex': file_regex, 'path': path})
+            {'cmd': cmd, 'env': env, 'file_regex': self.error_regex, 'path': path})
