@@ -1,31 +1,31 @@
 [
     {
-        "mnemonic": "n", 
-        "caption": "Preferences", 
-        "id": "preferences", 
+        "mnemonic": "n",
+        "caption": "Preferences",
+        "id": "preferences",
         "children": [
             {
-                "mnemonic": "P", 
-                "caption": "Package Settings", 
-                "id": "package-settings", 
+                "mnemonic": "P",
+                "caption": "Package Settings",
+                "id": "package-settings",
                 "children": [
                     {
-                        "caption": "Pig", 
+                        "caption": "Pig",
                         "children": [
                             {
-                                "caption": "Settings \u2013 Default", 
+                                "caption": "Settings \u2013 Default",
                                 "args": {
-                                    "file": "${packages}/Pig/Pig.sublime-settings"
-                                }, 
+                                    "file": "${packages}/Apache Pig/Pig.sublime-settings"
+                                },
                                 "command": "open_file"
-                            }, 
+                            },
                             {
-                                "caption": "Settings \u2013 User", 
+                                "caption": "Settings \u2013 User",
                                 "args": {
                                     "file": "${packages}/User/Pig.sublime-settings"
-                                }, 
+                                },
                                 "command": "open_file"
-                            }, 
+                            },
                             {
                                 "caption": "-"
                             }
