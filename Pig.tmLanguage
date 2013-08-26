@@ -5,7 +5,6 @@
 	<key>fileTypes</key>
 	<array>
 		<string>pig</string>
-		<string>pig.substituted</string>
 	</array>
 	<key>name</key>
 	<string>Pig</string>
@@ -144,7 +143,9 @@
 			<string>(?i)^\s*([a-z_][a-z0-9_]*)\s*(?:=)</string>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>(?i)^\s*(set)\s+(\S+)</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -157,8 +158,15 @@
 					<string>storage.type.parameter.pig</string>
 				</dict>
 			</dict>
-			<key>match</key>
-			<string>(?i)\s*(set)\s+(\S+)\s+(\S+)</string>
+			<key>end</key>
+			<string>$</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>captures</key>

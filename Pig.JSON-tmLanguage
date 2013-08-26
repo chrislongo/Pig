@@ -92,15 +92,15 @@
             "match": "(?i)^\\s*([a-z_][a-z0-9_]*)\\s*(?:=)"
         },
         {
-            "captures": {
-                "1": {
-                    "name": "keyword.parameter.pig"
-                },
-                "2": {
-                    "name": "storage.type.parameter.pig"
-                }
+            "begin": "(?i)^\\s*(set)\\s+(\\S+)",
+            "end": "$",
+            "beginCaptures": {
+                "1" : { "name" : "keyword.parameter.pig"},
+                "2" : { "name" : "storage.type.parameter.pig"}
             },
-            "match": "(?i)\\s*(set)\\s+(\\S+)\\s+(\\S+)"
+            "patterns": [
+                { "include": "$self" }
+            ]
         },
         {
             "captures": {
