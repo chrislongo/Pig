@@ -1,6 +1,7 @@
 {
     "fileTypes": [
-        "pig"
+        "pig",
+        "pig.substituted"
     ],
     "name": "Pig",
     "patterns": [
