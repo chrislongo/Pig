@@ -1,5 +1,6 @@
 import sublime
 import sublime_plugin
+import os
 
 
 class RunPigCommand(sublime_plugin.WindowCommand):
@@ -31,24 +32,22 @@ class RunPigCommand(sublime_plugin.WindowCommand):
 
         if pig_home is not None:
             env['PIG_HOME'] = pig_home
-            pig_binary = pig_home + '/bin/pig'
+            pig_binary = os.path.join(pig_home, 'bin', 'pig')
         else:
             pig_binary = 'pig'
 
-        if execution_mode is not None:
-            execution_mode = '-x ' + execution_mode
+        cmd = [pig_binary]
 
         if pig_classpath is not None:
             env['PIG_CLASSPATH'] = pig_classpath
 
         if log4j_properties is not None:
-            log4j_properties = '-4 ' + log4j_properties
-        else:
-            log4j_properties = ''
+            cmd.extend(['-4 ', log4j_properties])
 
-        file_name = self.window.active_view().file_name()
+        if execution_mode is not None:
+            cmd.extend(['-x', execution_mode])
 
-        cmd = [pig_binary, execution_mode, log4j_properties, file_name]
+        cmd.append(self.window.active_view().file_name())
 
         self.window.run_command('exec',
             {'cmd': cmd, 'env': env, 'file_regex': file_regex, 'path': path})
