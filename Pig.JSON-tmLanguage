@@ -15,19 +15,19 @@
             "name": "comment.line.double-dash.asciidoc"
         },
         {
-            "match": "\\b(?i:LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|REGISTER|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER|INNER|DEFAULT|LEFT|SAMPLE|RANK|CUBE|ALL|KILL|QUIT|MAPREDUCE|ASC|DESC|THROUGH|SHIP|CACHE|STDERR|DECLARE)\\b",
+            "match": "\\b(?i:ASSERT|LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER|INNER|DEFAULT|LEFT|SAMPLE|RANK|CUBE|ALL|KILL|QUIT|MAPREDUCE|ASC|DESC|THROUGH|SHIP|CACHE|DECLARE|CASE|WHEN|THEN|END|IN|PARTITION|FULL|IMPORT|IF|ONSCHEMA|INPUT|OUTPUT)\\b",
             "name": "keyword.control.pig"
         },
         {
-            "match": "\\b(?i:int|long|float|double|chararray|bytearray|boolean|datetime|tuple|bag|map)\\b",
+            "match": "\\b(?i:int|long|float|double|chararray|bytearray|boolean|datetime|biginteger|bigdecimal|tuple|bag|map)\\b",
             "name": "storage.datatypes.pig"
         },
         {
-            "match": "\\b(PigStorage|BinStorage|BinaryStorage|PigDump|HBaseStorage|JsonLoader|JsonStorage|AvroStorage|TextLoader)\\b",
+            "match": "\\b(PigStorage|BinStorage|BinaryStorage|PigDump|HBaseStorage|JsonLoader|JsonStorage|AvroStorage|TextLoader|PigStreaming|TrevniStorage)\\b",
             "name": "support.function.storage.pig"
         },
         {
-            "match": "\\b(DIFF|TOBAG|TOMAP|TOP|TOTUPLE|RANDOM|FLATTEN|CUBE|ROLLUP|IsEmpty|ARITY)\\b",
+            "match": "\\b(DIFF|TOBAG|TOMAP|TOP|TOTUPLE|RANDOM|FLATTEN|CUBE|ROLLUP|IsEmpty|ARITY|PluckTuple|SUBTRACT)\\b",
             "name": "support.function.udf.pig"
         },
         {
@@ -35,11 +35,11 @@
             "name": "support.function.udf.math.pig"
         },
         {
-            "match": "\\b(CONCAT|INDEXOF|LAST_INDEX_OF|LCFIRST|LOWER|REGEX_EXTRACT|REGEX_EXTRACT_ALL|REPLACE|SIZE|STRSPLIT|SUBSTRING|TOKENIZE|TRIM|UCFIRST|UPPER)\\b",
+            "match": "\\b(CONCAT|INDEXOF|LAST_INDEX_OF|LCFIRST|LOWER|REGEX_EXTRACT|REGEX_EXTRACT_ALL|REPLACE|SIZE|STRSPLIT|SUBSTRING|TOKENIZE|TRIM|UCFIRST|UPPER|LTRIM|RTRIM|ENDSWITH|STARTSWITH|TRIM)\\b",
             "name": "support.function.udf.string.pig"
         },
         {
-            "match": "\\b(AddDuration|CurrentTime|DaysBetween|GetDay|GetHour|GetMilliSecond|GetMinute|GetMonth|GetSecond|GetWeek|GetWeekYear|GetYear|HoursBetween|MilliSecondsBetween|MinutesBetween|MonthsBetween|SecondsBetween|SubtractDuration|ToDate|WeeksBetween|YearsBetween)\\b",
+            "match": "\\b(AddDuration|CurrentTime|DaysBetween|GetDay|GetHour|GetMilliSecond|GetMinute|GetMonth|GetSecond|GetWeek|GetWeekYear|GetYear|HoursBetween|MilliSecondsBetween|MinutesBetween|MonthsBetween|SecondsBetween|SubtractDuration|ToDate|WeeksBetween|YearsBetween|ToMilliSeconds|ToString|ToUnixTime)\\b",
             "name" : "support.function.udf.datetime.pig"
         },
         {
@@ -51,15 +51,19 @@
             "name": "variable.pig"
         },
         {
-            "match": "(?i)\\b(NULL|true|false)\\b",
+            "match": "(?i)\\b(NULL|true|false|stdin|stdout|stderr)\\b",
             "name" : "constant.language.pig"
         },
         {
-            "match": "(?i)\\b(?:!=|==|<|>|<=|>=|MATCHES|IS|OR|AND|NOT)\\b",
+            "match": "\\b\\d+(\\.\\d+)?\\b",
+            "name" : "constant.numeric.pig"
+        },
+        {
+            "match": "(?i)!=|==|<|>|<=|>=|(?:\\b(?:MATCHES|IS|OR|AND|NOT)\\b)",
             "name": "keyword.operator.comparison.pig"
         },
         {
-            "match": "\\b(\\+|\\-|\\*|\\/|\\%|\\?|:|::)\\b",
+            "match": "(\\+|\\-|\\*|\\/|\\%|\\?|:|::|\\.\\.|#)",
             "name": "keyword.operator.arithmetic.pig"
         },
         {
@@ -112,7 +116,8 @@
                     "name": "storage.type.alias.pig"
                 }
             },
-            "match": "(?i)\\s*(DEFINE|DECLARE)\\s+(\\S+)"
+            "begin": "(?i)\\s*(DEFINE|DECLARE|REGISTER)\\s+(\\S+)",
+            "end":";?$"
         }
     ],
     "scopeName": "source.pig",

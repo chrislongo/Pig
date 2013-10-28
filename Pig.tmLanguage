@@ -27,25 +27,25 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|REGISTER|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER|INNER|DEFAULT|LEFT|SAMPLE|RANK|CUBE|ALL|KILL|QUIT|MAPREDUCE|ASC|DESC|THROUGH|SHIP|CACHE|STDERR|DECLARE)\b</string>
+			<string>\b(?i:ASSERT|LOAD|STORE|DUMP|FILTER|DISTINCT|FOREACH|GENERATE|STREAM|JOIN|COGROUP|GROUP|CROSS|ORDER|LIMIT|UNION|SPLIT|DESCRIBE|EXPLAIN|ILLUSTRATE|AS|BY|INTO|USING|LIMIT|PARALLEL|OUTER|INNER|DEFAULT|LEFT|SAMPLE|RANK|CUBE|ALL|KILL|QUIT|MAPREDUCE|ASC|DESC|THROUGH|SHIP|CACHE|DECLARE|CASE|WHEN|THEN|END|IN|PARTITION|FULL|IMPORT|IF|ONSCHEMA|INPUT|OUTPUT)\b</string>
 			<key>name</key>
 			<string>keyword.control.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:int|long|float|double|chararray|bytearray|boolean|datetime|tuple|bag|map)\b</string>
+			<string>\b(?i:int|long|float|double|chararray|bytearray|boolean|datetime|biginteger|bigdecimal|tuple|bag|map)\b</string>
 			<key>name</key>
 			<string>storage.datatypes.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(PigStorage|BinStorage|BinaryStorage|PigDump|HBaseStorage|JsonLoader|JsonStorage|AvroStorage|TextLoader)\b</string>
+			<string>\b(PigStorage|BinStorage|BinaryStorage|PigDump|HBaseStorage|JsonLoader|JsonStorage|AvroStorage|TextLoader|PigStreaming|TrevniStorage)\b</string>
 			<key>name</key>
 			<string>support.function.storage.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(DIFF|TOBAG|TOMAP|TOP|TOTUPLE|RANDOM|FLATTEN|CUBE|ROLLUP|IsEmpty|ARITY)\b</string>
+			<string>\b(DIFF|TOBAG|TOMAP|TOP|TOTUPLE|RANDOM|FLATTEN|CUBE|ROLLUP|IsEmpty|ARITY|PluckTuple|SUBTRACT)\b</string>
 			<key>name</key>
 			<string>support.function.udf.pig</string>
 		</dict>
@@ -57,13 +57,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(CONCAT|INDEXOF|LAST_INDEX_OF|LCFIRST|LOWER|REGEX_EXTRACT|REGEX_EXTRACT_ALL|REPLACE|SIZE|STRSPLIT|SUBSTRING|TOKENIZE|TRIM|UCFIRST|UPPER)\b</string>
+			<string>\b(CONCAT|INDEXOF|LAST_INDEX_OF|LCFIRST|LOWER|REGEX_EXTRACT|REGEX_EXTRACT_ALL|REPLACE|SIZE|STRSPLIT|SUBSTRING|TOKENIZE|TRIM|UCFIRST|UPPER|LTRIM|RTRIM|ENDSWITH|STARTSWITH|TRIM)\b</string>
 			<key>name</key>
 			<string>support.function.udf.string.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(AddDuration|CurrentTime|DaysBetween|GetDay|GetHour|GetMilliSecond|GetMinute|GetMonth|GetSecond|GetWeek|GetWeekYear|GetYear|HoursBetween|MilliSecondsBetween|MinutesBetween|MonthsBetween|SecondsBetween|SubtractDuration|ToDate|WeeksBetween|YearsBetween)\b</string>
+			<string>\b(AddDuration|CurrentTime|DaysBetween|GetDay|GetHour|GetMilliSecond|GetMinute|GetMonth|GetSecond|GetWeek|GetWeekYear|GetYear|HoursBetween|MilliSecondsBetween|MinutesBetween|MonthsBetween|SecondsBetween|SubtractDuration|ToDate|WeeksBetween|YearsBetween|ToMilliSeconds|ToString|ToUnixTime)\b</string>
 			<key>name</key>
 			<string>support.function.udf.datetime.pig</string>
 		</dict>
@@ -81,19 +81,25 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)\b(NULL|true|false)\b</string>
+			<string>(?i)\b(NULL|true|false|stdin|stdout|stderr)\b</string>
 			<key>name</key>
 			<string>constant.language.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)\b(?:!=|==|&lt;|&gt;|&lt;=|&gt;=|MATCHES|IS|OR|AND|NOT)\b</string>
+			<string>\b\d+(\.\d+)?\b</string>
+			<key>name</key>
+			<string>constant.numeric.pig</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i)!=|==|&lt;|&gt;|&lt;=|&gt;=|(?:\b(?:MATCHES|IS|OR|AND|NOT)\b)</string>
 			<key>name</key>
 			<string>keyword.operator.comparison.pig</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(\+|\-|\*|\/|\%|\?|:|::)\b</string>
+			<string>(\+|\-|\*|\/|\%|\?|:|::|\.\.|#)</string>
 			<key>name</key>
 			<string>keyword.operator.arithmetic.pig</string>
 		</dict>
@@ -170,6 +176,8 @@
 			</array>
 		</dict>
 		<dict>
+			<key>begin</key>
+			<string>(?i)\s*(DEFINE|DECLARE|REGISTER)\s+(\S+)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -183,8 +191,8 @@
 					<string>storage.type.alias.pig</string>
 				</dict>
 			</dict>
-			<key>match</key>
-			<string>(?i)\s*(DEFINE|DECLARE)\s+(\S+)</string>
+			<key>end</key>
+			<string>;?$</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
