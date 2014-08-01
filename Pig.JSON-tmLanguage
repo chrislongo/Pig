@@ -23,15 +23,15 @@
             "name": "storage.datatypes.pig"
         },
         {
-            "match": "\\b(PigStorage|BinStorage|BinaryStorage|PigDump|HBaseStorage|JsonLoader|JsonStorage|AvroStorage|TextLoader|PigStreaming|TrevniStorage)\\b",
+            "match": "\\b(PigStorage|BinStorage|BinaryStorage|PigDump|HBaseStorage|JsonLoader|JsonStorage|AvroStorage|TextLoader|PigStreaming|TrevniStorage|AccumuloStorage)\\b",
             "name": "support.function.storage.pig"
         },
         {
-            "match": "\\b(DIFF|TOBAG|TOMAP|TOP|TOTUPLE|RANDOM|FLATTEN|CUBE|ROLLUP|IsEmpty|ARITY|PluckTuple|SUBTRACT)\\b",
+            "match": "\\b(DIFF|TOBAG|TOMAP|TOP|TOTUPLE|RANDOM|FLATTEN|flatten|CUBE|ROLLUP|IsEmpty|ARITY|PluckTuple|SUBTRACT|BagToString)\\b",
             "name": "support.function.udf.pig"
         },
         {
-            "match": "\\b(ABS|ACOS|ASIN|ATAN|CBRT|CEIL|COS|COSH|EXP|FLOOR|LOG|LOG10|ROUND|SIN|SINH|SQRT|TAN|TANH|AVG|COUNT|COUNT_STAR|MAX|MIN|SUM|COR|COV)\\b",
+            "match": "\\b(ABS|ACOS|ASIN|ATAN|CBRT|CEIL|COS|COSH|EXP|FLOOR|LOG|LOG10|ROUND|ROUND_TO|SIN|SINH|SQRT|TAN|TANH|AVG|COUNT|COUNT_STAR|MAX|MIN|SUM|COR|COV)\\b",
             "name": "support.function.udf.math.pig"
         },
         {
